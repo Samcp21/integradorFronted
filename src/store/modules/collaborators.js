@@ -37,7 +37,7 @@ const actions = {
                     Authorization: `Bearer ${token}`
                 }
             })
-            console.log('data', data)
+            console.log('data_getRoles', data)
             commit('SET_ROLES', data)
         }
     },

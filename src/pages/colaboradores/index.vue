@@ -156,7 +156,9 @@ export default {
             { text: 'Colaborador', value: 'numeroDocumento' },
             { text: 'Cargo', value: 'rol' },
             { text: 'Correo', value: 'correo' },
-            { text: 'Telefono', value: 'telefono' }
+            { text: 'Telefono', value: 'telefono' },
+            { text: 'Fecha de Creacion', value: 'fechaCreacion' },
+            { text: 'Usuario de la Creacion', value: 'createdByUser' }
         ],
         loadingCollaborators: false,
         search: '',
@@ -174,7 +176,12 @@ export default {
             console.log('roles', this.roles)
             const items = []
             this.lista.map((x) => {
-                items.push({ ...x, nombreCompletos: `${x.nombres} ${x.apellidos}`, rol: this.roles.find((y) => y.id == x.idRol)?.description })
+                items.push({
+                    ...x,
+                    createdByUser: 'Alex',
+                    nombreCompletos: `${x.nombres} ${x.apellidos}`,
+                    rol: this.roles.find((y) => y.id == x.idRol)?.description
+                })
             })
             return items
         }
